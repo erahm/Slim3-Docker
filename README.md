@@ -3,4 +3,5 @@
 Docker container that spins up Slim 3 and PHP 7
 
 
-Run it with: docker run -t -i stlmikey/slim3:latest
+Build with: `docker build -t slim3 .`
+Run with: `docker run -d -P slim3` or `docker run -d -p 80:80 slim3`
