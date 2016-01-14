@@ -1,7 +1,8 @@
-FROM php:7.0
+FROM php:7.0.2-apache
 
-RUN mkdir -p /var/www/html
+#COPY config/php.ini /usr/local/etc/php/
+COPY src/ /var/www/html/
 
 EXPOSE 80
 
-ENTRYPOINT php -S localhost:80 -t /var/www/html
+ENTRYPOINT /usr/sbin/apache2ctl -D FOREGROUND
